@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Whisparr.Host
+namespace Lunarr.Host
 {
     public class TerminateApplicationException : ApplicationException
     {

@@ -12,18 +12,18 @@ namespace NzbDrone.Common.Extensions
     public static class PathExtensions
     {
         private const string APP_CONFIG_FILE = "config.xml";
-        private const string DB = "whisparr.db";
+        private const string DB = "lunarr.db";
         private const string DB_OLD = "nzbdrone.db";
-        private const string DB_RESTORE = "whisparr.restore";
+        private const string DB_RESTORE = "lunarr.restore";
         private const string LOG_DB = "logs.db";
         private const string NLOG_CONFIG_FILE = "nlog.config";
-        private const string UPDATE_CLIENT_EXE_NAME = "Whisparr.Update";
+        private const string UPDATE_CLIENT_EXE_NAME = "Lunarr.Update";
 
-        private static readonly string UPDATE_SANDBOX_FOLDER_NAME = "whisparr_update" + Path.DirectorySeparatorChar;
-        private static readonly string UPDATE_PACKAGE_FOLDER_NAME = "Whisparr" + Path.DirectorySeparatorChar;
-        private static readonly string UPDATE_BACKUP_FOLDER_NAME = "whisparr_backup" + Path.DirectorySeparatorChar;
-        private static readonly string UPDATE_BACKUP_APPDATA_FOLDER_NAME = "whisparr_appdata_backup" + Path.DirectorySeparatorChar;
-        private static readonly string UPDATE_CLIENT_FOLDER_NAME = "Whisparr.Update" + Path.DirectorySeparatorChar;
+        private static readonly string UPDATE_SANDBOX_FOLDER_NAME = "lunarr_update" + Path.DirectorySeparatorChar;
+        private static readonly string UPDATE_PACKAGE_FOLDER_NAME = "Lunarr" + Path.DirectorySeparatorChar;
+        private static readonly string UPDATE_BACKUP_FOLDER_NAME = "lunarr_backup" + Path.DirectorySeparatorChar;
+        private static readonly string UPDATE_BACKUP_APPDATA_FOLDER_NAME = "lunarr_appdata_backup" + Path.DirectorySeparatorChar;
+        private static readonly string UPDATE_CLIENT_FOLDER_NAME = "Lunarr.Update" + Path.DirectorySeparatorChar;
         private static readonly string UPDATE_LOG_FOLDER_NAME = "UpdateLogs" + Path.DirectorySeparatorChar;
 
         private static readonly Regex PARENT_PATH_END_SLASH_REGEX = new Regex(@"(?<!:)\\$", RegexOptions.Compiled);

@@ -61,7 +61,7 @@ class PageHeader extends Component {
           >
             <img
               className={styles.logo}
-              src={`${window.Whisparr.urlBase}/Content/Images/logo.png`}
+              src={`${window.Lunarr.urlBase}/Content/Images/logo.png`}
             />
           </Link>
         </div>
@@ -80,14 +80,14 @@ class PageHeader extends Component {
           <IconButton
             className={styles.donate}
             name={icons.HEART}
-            to="https://whisparr.com/donate"
+            to="https://lunarr.com/donate"
             size={14}
           />
           <IconButton
             className={styles.translate}
             title={translate('SuggestTranslationChange')}
             name={icons.TRANSLATE}
-            to="https://translate.servarr.com/projects/whisparr/whisparr/"
+            to="https://translate.servarr.com/projects/lunarr/lunarr/"
             size={24}
           />
           <PageHeaderActionsMenuConnector

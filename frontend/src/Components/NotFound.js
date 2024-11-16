@@ -14,7 +14,7 @@ function NotFound({ message }) {
 
         <img
           className={styles.image}
-          src={`${window.Whisparr.urlBase}/Content/Images/404.png`}
+          src={`${window.Lunarr.urlBase}/Content/Images/404.png`}
         />
       </div>
     </PageContent>

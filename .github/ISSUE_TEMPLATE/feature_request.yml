@@ -1,5 +1,5 @@
 name: Feature Request
-description: 'Suggest an idea for Whisparr'
+description: 'Suggest an idea for Lunarr'
 labels: ['Type: Feature Request', 'Status: Needs Triage']
 body:
 - type: checkboxes

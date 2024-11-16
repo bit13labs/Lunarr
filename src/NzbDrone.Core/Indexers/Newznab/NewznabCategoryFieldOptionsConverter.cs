@@ -9,7 +9,7 @@ namespace NzbDrone.Core.Indexers.Newznab
     {
         public static List<FieldSelectOption> GetFieldSelectOptions(List<NewznabCategory> categories)
         {
-            // Categories not relevant for Whisparr
+            // Categories not relevant for Lunarr
             var ignoreCategories = new[] { 1000, 3000, 4000, 7000 };
 
             // And maybe relevant for specific users

@@ -12,11 +12,20 @@ class Donations extends Component {
   render() {
     return (
       <FieldSet legend={translate('Donations')}>
+        <div className={styles.logoContainer} title="Lunarr">
+          <Link to="https://lunarr.com/donate">
+            <img
+              className={styles.logo}
+              src={`${window.Lunarr.urlBase}/Content/Images/Icons/logo-lunarr.png`}
+            />
+          </Link>
+        </div>
+
         <div className={styles.logoContainer} title="Whisparr">
           <Link to="https://whisparr.com/donate">
             <img
               className={styles.logo}
-              src={`${window.Whisparr.urlBase}/Content/Images/Icons/logo-whisparr.png`}
+              src={`${window.Lunarr.urlBase}/Content/Images/Icons/logo-lunarr.png`}
             />
           </Link>
         </div>
@@ -24,7 +33,7 @@ class Donations extends Component {
           <Link to="https://lidarr.audio/donate">
             <img
               className={styles.logo}
-              src={`${window.Whisparr.urlBase}/Content/Images/Icons/logo-lidarr.png`}
+              src={`${window.Lunarr.urlBase}/Content/Images/Icons/logo-lidarr.png`}
             />
           </Link>
         </div>
@@ -32,7 +41,7 @@ class Donations extends Component {
           <Link to="https://readarr.com/donate">
             <img
               className={styles.logo}
-              src={`${window.Whisparr.urlBase}/Content/Images/Icons/logo-readarr.png`}
+              src={`${window.Lunarr.urlBase}/Content/Images/Icons/logo-readarr.png`}
             />
           </Link>
         </div>
@@ -40,7 +49,7 @@ class Donations extends Component {
           <Link to="https://prowlarr.com/donate">
             <img
               className={styles.logo}
-              src={`${window.Whisparr.urlBase}/Content/Images/Icons/logo-prowlarr.png`}
+              src={`${window.Lunarr.urlBase}/Content/Images/Icons/logo-prowlarr.png`}
             />
           </Link>
         </div>
@@ -48,7 +57,7 @@ class Donations extends Component {
           <Link to="https://sonarr.tv/donate">
             <img
               className={styles.logo}
-              src={`${window.Whisparr.urlBase}/Content/Images/Icons/logo-sonarr.png`}
+              src={`${window.Lunarr.urlBase}/Content/Images/Icons/logo-sonarr.png`}
             />
           </Link>
         </div>

@@ -27,7 +27,7 @@ namespace NzbDrone.Core.Notifications.Pushover
             Devices = Array.Empty<string>();
         }
 
-        [FieldDefinition(0, Label = "API Key", Privacy = PrivacyLevel.ApiKey, HelpLink = "https://pushover.net/apps/clone/whisparr")]
+        [FieldDefinition(0, Label = "API Key", Privacy = PrivacyLevel.ApiKey, HelpLink = "https://pushover.net/apps/clone/lunarr")]
         public string ApiKey { get; set; }
 
         [FieldDefinition(1, Label = "User Key", Privacy = PrivacyLevel.UserName, HelpLink = "https://pushover.net/")]

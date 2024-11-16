@@ -1,5 +1,5 @@
 ﻿using RestSharp;
-using Whisparr.Api.V3.Indexers;
+using Lunarr.Api.V3.Indexers;
 
 namespace NzbDrone.Integration.Test.Client
 {

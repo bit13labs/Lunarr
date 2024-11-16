@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList
+namespace NzbDrone.Core.ImportLists.LunarrList
 {
-    public class WhisparrListException : Exception
+    public class LunarrListException : Exception
     {
-        public WhisparrErrors APIErrors;
+        public LunarrErrors APIErrors;
 
-        public WhisparrListException(WhisparrErrors apiError)
+        public LunarrListException(LunarrErrors apiError)
             : base(HumanReadable(apiError))
         {
             APIErrors = apiError;
         }
 
-        private static string HumanReadable(WhisparrErrors apiErrors)
+        private static string HumanReadable(LunarrErrors apiErrors)
         {
             var firstError = apiErrors.Errors.First();
             var details = string.Join("\n", apiErrors.Errors.Select(error =>
@@ -26,7 +26,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList
         }
     }
 
-    public class WhisparrError
+    public class LunarrError
     {
         [JsonProperty("id")]
         public string RayId { get; set; }
@@ -41,9 +41,9 @@ namespace NzbDrone.Core.ImportLists.WhisparrList
         public string Detail { get; set; }
     }
 
-    public class WhisparrErrors
+    public class LunarrErrors
     {
         [JsonProperty("errors")]
-        public IList<WhisparrError> Errors { get; set; }
+        public IList<LunarrError> Errors { get; set; }
     }
 }

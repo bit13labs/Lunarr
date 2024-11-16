@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace NzbDrone.Core.ImportLists.Whisparr
+namespace NzbDrone.Core.ImportLists.Lunarr
 {
-    public class WhisparrMovie
+    public class LunarrMovie
     {
         public string Title { get; set; }
         public string SortTitle { get; set; }
@@ -19,13 +19,13 @@ namespace NzbDrone.Core.ImportLists.Whisparr
         public HashSet<int> Tags { get; set; }
     }
 
-    public class WhisparrProfile
+    public class LunarrProfile
     {
         public string Name { get; set; }
         public int Id { get; set; }
     }
 
-    public class WhisparrTag
+    public class LunarrTag
     {
         public string Label { get; set; }
         public int Id { get; set; }

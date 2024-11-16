@@ -105,7 +105,7 @@ App_Data/*.ldf
 _NCrunch_*
 _TeamCity*
 
-# Whisparr
+# Lunarr
 config.xml
 nzbdrone.log*txt
 UpdateLogs/
@@ -139,9 +139,9 @@ artifacts/
 **/Properties/launchSettings.json
 
 # Packages
-Whisparr_*/
-Whisparr_*.zip
-Whisparr_*.gz
+Lunarr_*/
+Lunarr_*.zip
+Lunarr_*.gz
 gecko.zip
 geckodriver.exe
 
@@ -171,8 +171,8 @@ packages.config.md5sum
 **/.idea/**/tasks.xml
 **/.idea/shelf/*
 **/.idea/dictionaries
-**/.idea/.idea.Whisparr.Posix
-**/.idea/.idea.Whisparr.Windows
+**/.idea/.idea.Lunarr.Posix
+**/.idea/.idea.Lunarr.Windows
 
 # Sensitive or high-churn files
 **/.idea/**/dataSources/

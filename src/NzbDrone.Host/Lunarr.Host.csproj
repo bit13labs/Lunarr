@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.3.0" />
+    <PackageReference Include="DryIoc.dll" Version="4.8.8" />
+    <PackageReference Include="DryIoc.Microsoft.DependencyInjection" Version="5.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NzbDrone.Common\Lunarr.Common.csproj" />
+    <ProjectReference Include="..\NzbDrone.Core\Lunarr.Core.csproj" />
+    <ProjectReference Include="..\NzbDrone.SignalR\Lunarr.SignalR.csproj" />
+    <ProjectReference Include="..\Lunarr.Api.V3\Lunarr.Api.V3.csproj" />
+    <ProjectReference Include="..\Lunarr.Http\Lunarr.Http.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Interop.NetFwTypeLib">
+      <HintPath>..\Libraries\Interop.NetFwTypeLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -11,15 +11,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>Whisparr</string>
+	<string>Lunarr</string>
 	<key>CFBundleIconFile</key>
-	<string>whisparr.icns</string>
+	<string>lunarr.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.osx.whisparr.com</string>
+	<string>com.osx.lunarr.com</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Whisparr</string>
+	<string>Lunarr</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

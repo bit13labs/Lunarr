@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using NLog;
 using NzbDrone.Common.Http;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList2
+namespace NzbDrone.Core.ImportLists.LunarrList2
 {
-    public abstract class WhisparrList2RequestGeneratorBase : IImportListRequestGenerator
+    public abstract class LunarrList2RequestGeneratorBase : IImportListRequestGenerator
     {
         public IHttpRequestBuilderFactory RequestBuilder { get; set; }
         public IHttpClient HttpClient { get; set; }

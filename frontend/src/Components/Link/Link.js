@@ -50,16 +50,16 @@ class Link extends Component {
         linkProps.target = target || '_self';
       } else {
         el = RouterLink;
-        linkProps.to = `${window.Whisparr.urlBase}/${to.replace(/^\//, '')}`;
+        linkProps.to = `${window.Lunarr.urlBase}/${to.replace(/^\//, '')}`;
         linkProps.target = target;
       }
     } else if (to && typeof to === 'object') {
       el = RouterLink;
       linkProps.target = target;
-      if (to.pathname.startsWith(`${window.Whisparr.urlBase}/`)) {
+      if (to.pathname.startsWith(`${window.Lunarr.urlBase}/`)) {
         linkProps.to = to;
       } else {
-        const pathname = `${window.Whisparr.urlBase}/${to.pathname.replace(/^\//, '')}`;
+        const pathname = `${window.Lunarr.urlBase}/${to.pathname.replace(/^\//, '')}`;
         linkProps.to = {
           ...to,
           pathname

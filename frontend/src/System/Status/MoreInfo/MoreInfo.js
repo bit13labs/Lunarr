@@ -19,42 +19,42 @@ class MoreInfo extends Component {
             {translate('HomePage')}
           </DescriptionListItemTitle>
           <DescriptionListItemDescription>
-            <Link to="https://whisparr.com/">whisparr.com</Link>
+            <Link to="https://lunarr.com/">lunarr.com</Link>
           </DescriptionListItemDescription>
 
           <DescriptionListItemTitle>
             {translate('Wiki')}
           </DescriptionListItemTitle>
           <DescriptionListItemDescription>
-            <Link to="https://wiki.servarr.com/whisparr">{translate('Wiki')}</Link>
+            <Link to="https://wiki.servarr.com/lunarr">{translate('Wiki')}</Link>
           </DescriptionListItemDescription>
 
           <DescriptionListItemTitle>
             {translate('Reddit')}
           </DescriptionListItemTitle>
           <DescriptionListItemDescription>
-            <Link to="https://www.reddit.com/r/Whisparr/">/r/Whisparr</Link>
+            <Link to="https://www.reddit.com/r/lunarr/">/r/Lunarr</Link>
           </DescriptionListItemDescription>
 
           <DescriptionListItemTitle>
             {translate('Discord')}
           </DescriptionListItemTitle>
           <DescriptionListItemDescription>
-            <Link to="https://whisparr.com/discord">whisparr.com/discord</Link>
+            <Link to="https://lunarr.com/discord">lunarr.com/discord</Link>
           </DescriptionListItemDescription>
 
           <DescriptionListItemTitle>
             {translate('Source')}
           </DescriptionListItemTitle>
           <DescriptionListItemDescription>
-            <Link to="https://github.com/Whisparr/Whisparr/">github.com/Whisparr/Whisparr</Link>
+            <Link to="https://github.com/bit13labs/Lunarr/">github.com/bit13labs/Lunarr</Link>
           </DescriptionListItemDescription>
 
           <DescriptionListItemTitle>
             {translate('FeatureRequests')}
           </DescriptionListItemTitle>
           <DescriptionListItemDescription>
-            <Link to="https://github.com/Whisparr/Whisparr/issues">github.com/Whisparr/Whisparr/issues</Link>
+            <Link to="https://github.com/bit13labs/Lunarr/issues">github.com/bit13labs/Lunarr/issues</Link>
           </DescriptionListItemDescription>
 
         </DescriptionList>

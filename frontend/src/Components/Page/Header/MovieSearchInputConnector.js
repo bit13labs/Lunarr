@@ -59,11 +59,11 @@ function createMapStateToProps() {
 function createMapDispatchToProps(dispatch, props) {
   return {
     onGoToMovie(titleSlug) {
-      dispatch(push(`${window.Whisparr.urlBase}/movie/${titleSlug}`));
+      dispatch(push(`${window.Lunarr.urlBase}/movie/${titleSlug}`));
     },
 
     onGoToAddNewMovie(query) {
-      dispatch(push(`${window.Whisparr.urlBase}/add/new?term=${encodeURIComponent(query)}`));
+      dispatch(push(`${window.Lunarr.urlBase}/add/new?term=${encodeURIComponent(query)}`));
     }
   };
 }

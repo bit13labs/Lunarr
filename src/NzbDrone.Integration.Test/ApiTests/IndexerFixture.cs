@@ -3,8 +3,8 @@ using FluentAssertions;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using NzbDrone.Core.ThingiProvider;
-using Whisparr.Api.V3.Indexers;
-using Whisparr.Http.ClientSchema;
+using Lunarr.Api.V3.Indexers;
+using Lunarr.Http.ClientSchema;
 
 namespace NzbDrone.Integration.Test.ApiTests
 {

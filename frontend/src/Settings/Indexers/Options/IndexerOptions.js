@@ -85,7 +85,7 @@ function IndexerOptions(props) {
                 type={inputTypes.CHECK}
                 name="preferIndexerFlags"
                 helpText={translate('PreferIndexerFlagsHelpText')}
-                helpLink="https://wiki.servarr.com/whisparr/settings#indexer-flags"
+                helpLink="https://wiki.servarr.com/lunarr/settings#indexer-flags"
                 onChange={onInputChange}
                 {...settings.preferIndexerFlags}
               />
@@ -118,7 +118,7 @@ function IndexerOptions(props) {
                 unit="minutes"
                 helpText={translate('RssSyncHelpText')}
                 helpTextWarning={translate('RSSSyncIntervalHelpTextWarning')}
-                helpLink="https://wiki.servarr.com/whisparr/faq#how-does-whisparr-work"
+                helpLink="https://wiki.servarr.com/lunarr/faq#how-does-lunarr-work"
                 onChange={onInputChange}
                 {...settings.rssSyncInterval}
               />

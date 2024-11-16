@@ -25,14 +25,14 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
         private readonly IHttpClient _httpClient;
         private readonly Logger _logger;
 
-        private readonly IHttpRequestBuilderFactory _whisparrMetadata;
+        private readonly IHttpRequestBuilderFactory _lunarrMetadata;
         private readonly IConfigService _configService;
         private readonly IMovieService _movieService;
         private readonly IMovieMetadataService _movieMetadataService;
         private readonly IMovieTranslationService _movieTranslationService;
 
         public SkyHookProxy(IHttpClient httpClient,
-            IWhisparrCloudRequestBuilder requestBuilder,
+            ILunarrCloudRequestBuilder requestBuilder,
             IConfigService configService,
             IMovieService movieService,
             IMovieMetadataService movieMetadataService,
@@ -40,7 +40,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             Logger logger)
         {
             _httpClient = httpClient;
-            _whisparrMetadata = requestBuilder.WhisparrMetadata;
+            _lunarrMetadata = requestBuilder.LunarrMetadata;
             _configService = configService;
             _movieService = movieService;
             _movieMetadataService = movieMetadataService;
@@ -55,7 +55,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             var cacheAdjustedStart = startTime.AddMinutes(-15);
             var startDate = cacheAdjustedStart.Date.AddHours(cacheAdjustedStart.Hour).ToString("s");
 
-            var request = _whisparrMetadata.Create()
+            var request = _lunarrMetadata.Create()
                 .SetSegment("route", "movie/changed")
                 .AddQueryParam("since", startDate)
                 .Build();
@@ -70,7 +70,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
 
         public Tuple<MovieMetadata, List<Credit>> GetMovieInfo(int tmdbId)
         {
-            var httpRequest = _whisparrMetadata.Create()
+            var httpRequest = _lunarrMetadata.Create()
                                              .SetSegment("route", "movie")
                                              .Resource(tmdbId.ToString())
                                              .Build();
@@ -103,7 +103,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
 
         public List<MovieMetadata> GetBulkMovieInfo(List<int> tmdbIds)
         {
-            var httpRequest = _whisparrMetadata.Create()
+            var httpRequest = _lunarrMetadata.Create()
                                              .SetSegment("route", "movie/bulk")
                                              .Build();
 
@@ -135,7 +135,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                 return null;
             }
 
-            var httpRequest = _whisparrMetadata.Create()
+            var httpRequest = _lunarrMetadata.Create()
                                              .SetSegment("route", "movie/imdb")
                                              .Resource(imdbId.ToString())
                                              .Build();
@@ -424,7 +424,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
 
                 var firstChar = searchTerm.First();
 
-                var request = _whisparrMetadata.Create()
+                var request = _lunarrMetadata.Create()
                     .SetSegment("route", "search")
                     .AddQueryParam("q", searchTerm)
                     .AddQueryParam("year", yearTerm)

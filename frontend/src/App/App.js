@@ -8,7 +8,7 @@ import AppRoutes from './AppRoutes';
 
 function App({ store, history }) {
   return (
-    <DocumentTitle title={window.Whisparr.instanceName}>
+    <DocumentTitle title={window.Lunarr.instanceName}>
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <PageConnector>

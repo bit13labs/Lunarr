@@ -4,7 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using NUnit.Framework;
 using NzbDrone.Integration.Test.Client;
-using Whisparr.Api.V3.Movies;
+using Lunarr.Api.V3.Movies;
 
 namespace NzbDrone.Integration.Test.ApiTests
 {

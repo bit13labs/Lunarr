@@ -9,25 +9,25 @@ using NzbDrone.Core.ImportLists.ImportListMovies;
 using NzbDrone.Core.Parser;
 using NzbDrone.Core.Validation;
 
-namespace NzbDrone.Core.ImportLists.Whisparr
+namespace NzbDrone.Core.ImportLists.Lunarr
 {
-    public class WhisparrImport : ImportListBase<WhisparrSettings>
+    public class LunarrImport : ImportListBase<LunarrSettings>
     {
-        private readonly IWhisparrV3Proxy _whisparrV3Proxy;
-        public override string Name => "Whisparr";
+        private readonly ILunarrV3Proxy _lunarrV3Proxy;
+        public override string Name => "Lunarr";
         public override bool Enabled => true;
         public override bool EnableAuto => false;
 
         public override ImportListType ListType => ImportListType.Program;
 
-        public WhisparrImport(IWhisparrV3Proxy whisparrV3Proxy,
+        public LunarrImport(ILunarrV3Proxy lunarrV3Proxy,
                             IImportListStatusService importListStatusService,
                             IConfigService configService,
                             IParsingService parsingService,
                             Logger logger)
             : base(importListStatusService, configService, parsingService, logger)
         {
-            _whisparrV3Proxy = whisparrV3Proxy;
+            _lunarrV3Proxy = lunarrV3Proxy;
         }
 
         public override ImportListFetchResult Fetch()
@@ -37,7 +37,7 @@ namespace NzbDrone.Core.ImportLists.Whisparr
 
             try
             {
-                var remoteMovies = _whisparrV3Proxy.GetMovies(Settings);
+                var remoteMovies = _lunarrV3Proxy.GetMovies(Settings);
 
                 foreach (var remoteMovie in remoteMovies)
                 {
@@ -79,7 +79,7 @@ namespace NzbDrone.Core.ImportLists.Whisparr
 
             if (action == "getProfiles")
             {
-                var devices = _whisparrV3Proxy.GetProfiles(Settings);
+                var devices = _lunarrV3Proxy.GetProfiles(Settings);
 
                 return new
                 {
@@ -94,7 +94,7 @@ namespace NzbDrone.Core.ImportLists.Whisparr
 
             if (action == "getTags")
             {
-                var devices = _whisparrV3Proxy.GetTags(Settings);
+                var devices = _lunarrV3Proxy.GetTags(Settings);
 
                 return new
                 {
@@ -112,7 +112,7 @@ namespace NzbDrone.Core.ImportLists.Whisparr
 
         protected override void Test(List<ValidationFailure> failures)
         {
-            failures.AddIfNotNull(_whisparrV3Proxy.Test(Settings));
+            failures.AddIfNotNull(_lunarrV3Proxy.Test(Settings));
         }
 
         private static MediaCover.MediaCover MapImage(MediaCover.MediaCover arg, string baseUrl)

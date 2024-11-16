@@ -24,7 +24,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _parsedMovieInfo = Builder<ParsedMovieInfo>.CreateNew()
                                                            .With(p => p.Quality = new QualityModel(Quality.SDTV,
                                                                new Revision(2, 0, false)))
-                                                           .With(p => p.ReleaseGroup = "Whisparr")
+                                                           .With(p => p.ReleaseGroup = "Lunarr")
                                                            .Build();
 
             _movie = Builder<Movie>.CreateNew()
@@ -69,7 +69,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _movie.MovieFileId = 1;
             _movie.MovieFile = Builder<MovieFile>.CreateNew()
                                                                 .With(e => e.Quality = new QualityModel(Quality.DVD))
-                                                                .With(e => e.ReleaseGroup = "Whisparr")
+                                                                .With(e => e.ReleaseGroup = "Lunarr")
                                                                 .Build();
 
             var remoteMovie = Builder<RemoteMovie>.CreateNew()
@@ -90,7 +90,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _movie.MovieFileId = 1;
             _movie.MovieFile = Builder<MovieFile>.CreateNew()
                                                  .With(e => e.Quality = new QualityModel(Quality.SDTV))
-                                                 .With(e => e.ReleaseGroup = "Whisparr")
+                                                 .With(e => e.ReleaseGroup = "Lunarr")
                                                  .Build();
 
             var remoteMovie = Builder<RemoteMovie>.CreateNew()
@@ -111,7 +111,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _movie.MovieFileId = 1;
             _movie.MovieFile = Builder<MovieFile>.CreateNew()
                                                  .With(e => e.Quality = new QualityModel(Quality.SDTV))
-                                                 .With(e => e.ReleaseGroup = "NotWhisparr")
+                                                 .With(e => e.ReleaseGroup = "NotLunarr")
                                                  .Build();
 
             var remoteMovie = Builder<RemoteMovie>.CreateNew()
@@ -155,7 +155,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _movie.MovieFileId = 1;
             _movie.MovieFile = Builder<MovieFile>.CreateNew()
                                                  .With(e => e.Quality = new QualityModel(Quality.SDTV))
-                                                 .With(e => e.ReleaseGroup = "Whisparr")
+                                                 .With(e => e.ReleaseGroup = "Lunarr")
                                                  .Build();
 
             var remoteMovie = Builder<RemoteMovie>.CreateNew()

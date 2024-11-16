@@ -26,7 +26,7 @@ namespace NzbDrone.Core.Download.Clients.RTorrent
             Host = "localhost";
             Port = 8080;
             UrlBase = "RPC2";
-            MovieCategory = "whisparr";
+            MovieCategory = "lunarr";
             OlderMoviePriority = (int)RTorrentPriority.Normal;
             RecentMoviePriority = (int)RTorrentPriority.Normal;
         }
@@ -49,10 +49,10 @@ namespace NzbDrone.Core.Download.Clients.RTorrent
         [FieldDefinition(5, Label = "Password", Type = FieldType.Password, Privacy = PrivacyLevel.Password)]
         public string Password { get; set; }
 
-        [FieldDefinition(6, Label = "Category", Type = FieldType.Textbox, HelpText = "Adding a category specific to Whisparr avoids conflicts with unrelated non-Whisparr downloads. Using a category is optional, but strongly recommended.")]
+        [FieldDefinition(6, Label = "Category", Type = FieldType.Textbox, HelpText = "Adding a category specific to Lunarr avoids conflicts with unrelated non-Lunarr downloads. Using a category is optional, but strongly recommended.")]
         public string MovieCategory { get; set; }
 
-        [FieldDefinition(7, Label = "Post-Import Category", Type = FieldType.Textbox, Advanced = true, HelpText = "Category for Whisparr to set after it has imported the download. Whisparr will not remove the torrent if seeding has finished. Leave blank to keep same category.")]
+        [FieldDefinition(7, Label = "Post-Import Category", Type = FieldType.Textbox, Advanced = true, HelpText = "Category for Lunarr to set after it has imported the download. Lunarr will not remove the torrent if seeding has finished. Leave blank to keep same category.")]
         public string MovieImportedCategory { get; set; }
 
         [FieldDefinition(8, Label = "Directory", Type = FieldType.Textbox, Advanced = true, HelpText = "Optional location to put downloads in, leave blank to use the default rTorrent location")]

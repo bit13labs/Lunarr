@@ -5,7 +5,7 @@ using NLog;
 using NzbDrone.Common.EnvironmentInfo;
 using NzbDrone.Core.Configuration;
 
-namespace Whisparr.Host.AccessControl
+namespace Lunarr.Host.AccessControl
 {
     public interface IFirewallAdapter
     {
@@ -31,13 +31,13 @@ namespace Whisparr.Host.AccessControl
             {
                 if (!IsNzbDronePortOpen(_configFileProvider.Port))
                 {
-                    _logger.Debug("Opening Port for Whisparr: {0}", _configFileProvider.Port);
+                    _logger.Debug("Opening Port for Lunarr: {0}", _configFileProvider.Port);
                     OpenFirewallPort(_configFileProvider.Port);
                 }
 
                 if (_configFileProvider.EnableSsl && !IsNzbDronePortOpen(_configFileProvider.SslPort))
                 {
-                    _logger.Debug("Opening SSL Port for Whisparr: {0}", _configFileProvider.SslPort);
+                    _logger.Debug("Opening SSL Port for Lunarr: {0}", _configFileProvider.SslPort);
                     OpenFirewallPort(_configFileProvider.SslPort);
                 }
             }
@@ -82,7 +82,7 @@ namespace Whisparr.Host.AccessControl
             }
             catch (Exception ex)
             {
-                _logger.Warn(ex, "Failed to open port in firewall for Whisparr " + portNumber);
+                _logger.Warn(ex, "Failed to open port in firewall for Lunarr " + portNumber);
             }
         }
 

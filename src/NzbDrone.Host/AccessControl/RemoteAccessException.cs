@@ -1,7 +1,7 @@
 using System;
 using NzbDrone.Common.Exceptions;
 
-namespace Whisparr.Host.AccessControl
+namespace Lunarr.Host.AccessControl
 {
     public class RemoteAccessException : NzbDroneException
     {

@@ -19,12 +19,12 @@ namespace NzbDrone.Core.Notifications
         protected const string HEALTH_ISSUE_TITLE = "Health Check Failure";
         protected const string APPLICATION_UPDATE_TITLE = "Application Updated";
 
-        protected const string MOVIE_GRABBED_TITLE_BRANDED = "Whisparr - " + MOVIE_GRABBED_TITLE;
-        protected const string MOVIE_DOWNLOADED_TITLE_BRANDED = "Whisparr - " + MOVIE_DOWNLOADED_TITLE;
-        protected const string MOVIE_DELETED_TITLE_BRANDED = "Whisparr - " + MOVIE_DELETED_TITLE;
-        protected const string MOVIE_FILE_DELETED_TITLE_BRANDED = "Whisparr - " + MOVIE_FILE_DELETED_TITLE;
-        protected const string HEALTH_ISSUE_TITLE_BRANDED = "Whisparr - " + HEALTH_ISSUE_TITLE;
-        protected const string APPLICATION_UPDATE_TITLE_BRANDED = "Whisparr - " + APPLICATION_UPDATE_TITLE;
+        protected const string MOVIE_GRABBED_TITLE_BRANDED = "Lunarr - " + MOVIE_GRABBED_TITLE;
+        protected const string MOVIE_DOWNLOADED_TITLE_BRANDED = "Lunarr - " + MOVIE_DOWNLOADED_TITLE;
+        protected const string MOVIE_DELETED_TITLE_BRANDED = "Lunarr - " + MOVIE_DELETED_TITLE;
+        protected const string MOVIE_FILE_DELETED_TITLE_BRANDED = "Lunarr - " + MOVIE_FILE_DELETED_TITLE;
+        protected const string HEALTH_ISSUE_TITLE_BRANDED = "Lunarr - " + HEALTH_ISSUE_TITLE;
+        protected const string APPLICATION_UPDATE_TITLE_BRANDED = "Lunarr - " + APPLICATION_UPDATE_TITLE;
 
         public abstract string Name { get; }
 

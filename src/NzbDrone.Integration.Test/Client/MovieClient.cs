@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Net;
 using RestSharp;
-using Whisparr.Api.V3.Movies;
+using Lunarr.Api.V3.Movies;
 
 namespace NzbDrone.Integration.Test.Client
 {

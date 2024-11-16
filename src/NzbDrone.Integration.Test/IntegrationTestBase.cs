@@ -18,16 +18,16 @@ using NzbDrone.Integration.Test.Client;
 using NzbDrone.SignalR;
 using NzbDrone.Test.Common.Categories;
 using RestSharp;
-using Whisparr.Api.V3.Blocklist;
-using Whisparr.Api.V3.Config;
-using Whisparr.Api.V3.DownloadClient;
-using Whisparr.Api.V3.History;
-using Whisparr.Api.V3.MovieFiles;
-using Whisparr.Api.V3.Movies;
-using Whisparr.Api.V3.Profiles.Quality;
-using Whisparr.Api.V3.RootFolders;
-using Whisparr.Api.V3.System.Tasks;
-using Whisparr.Api.V3.Tags;
+using Lunarr.Api.V3.Blocklist;
+using Lunarr.Api.V3.Config;
+using Lunarr.Api.V3.DownloadClient;
+using Lunarr.Api.V3.History;
+using Lunarr.Api.V3.MovieFiles;
+using Lunarr.Api.V3.Movies;
+using Lunarr.Api.V3.Profiles.Quality;
+using Lunarr.Api.V3.RootFolders;
+using Lunarr.Api.V3.System.Tasks;
+using Lunarr.Api.V3.Tags;
 
 namespace NzbDrone.Integration.Test
 {

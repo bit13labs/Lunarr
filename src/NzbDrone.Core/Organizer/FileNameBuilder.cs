@@ -328,7 +328,7 @@ namespace NzbDrone.Core.Organizer
             tokenHandlers["{Original Title}"] = m => GetOriginalTitle(movieFile);
             tokenHandlers["{Original Filename}"] = m => GetOriginalFileName(movieFile);
 
-            tokenHandlers["{Release Group}"] = m => movieFile.ReleaseGroup ?? m.DefaultValue("Whisparr");
+            tokenHandlers["{Release Group}"] = m => movieFile.ReleaseGroup ?? m.DefaultValue("Lunarr");
         }
 
         private void AddQualityTokens(Dictionary<string, Func<TokenMatch, string>> tokenHandlers, Movie movie, MovieFile movieFile)

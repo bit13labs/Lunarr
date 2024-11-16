@@ -20,8 +20,8 @@ namespace NzbDrone.Common.EnvironmentInfo
 
             IsWindowsService = hostLifetime is WindowsServiceLifetime;
 
-            // net6.0 will return Whisparr.dll for entry assembly, we need the actual
-            // executable name (Whisparr on linux).  On mono this will return the location of
+            // net6.0 will return Lunarr.dll for entry assembly, we need the actual
+            // executable name (Lunarr on linux).  On mono this will return the location of
             // the mono executable itself, which is not what we want.
             var entry = Process.GetCurrentProcess().MainModule;
 

@@ -2,31 +2,31 @@ using NzbDrone.Common.Http;
 
 namespace NzbDrone.Common.Cloud
 {
-    public interface IWhisparrCloudRequestBuilder
+    public interface ILunarrCloudRequestBuilder
     {
         IHttpRequestBuilderFactory Services { get; }
         IHttpRequestBuilderFactory TMDB { get; }
-        IHttpRequestBuilderFactory WhisparrMetadata { get; }
+        IHttpRequestBuilderFactory LunarrMetadata { get; }
     }
 
-    public class WhisparrCloudRequestBuilder : IWhisparrCloudRequestBuilder
+    public class LunarrCloudRequestBuilder : ILunarrCloudRequestBuilder
     {
-        public WhisparrCloudRequestBuilder()
+        public LunarrCloudRequestBuilder()
         {
-            Services = new HttpRequestBuilder("https://whisparr.servarr.com/v1/")
+            Services = new HttpRequestBuilder("https://lunarr.servarr.com/v1/")
                 .CreateFactory();
 
             TMDB = new HttpRequestBuilder("https://api.themoviedb.org/{api}/{route}/{id}{secondaryRoute}")
                 .SetHeader("Authorization", $"Bearer {AuthToken}")
                 .CreateFactory();
 
-            WhisparrMetadata = new HttpRequestBuilder("https://api.whisparr.com/v1/{route}")
+            LunarrMetadata = new HttpRequestBuilder("https://api.lunarr.com/v1/{route}")
                 .CreateFactory();
         }
 
         public IHttpRequestBuilderFactory Services { get; private set; }
         public IHttpRequestBuilderFactory TMDB { get; private set; }
-        public IHttpRequestBuilderFactory WhisparrMetadata { get; private set; }
+        public IHttpRequestBuilderFactory LunarrMetadata { get; private set; }
 
         public string AuthToken => "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYTczNzMzMDE5NjFkMDNmOTdmODUzYTg3NmRkMTIxMiIsInN1YiI6IjU4NjRmNTkyYzNhMzY4MGFiNjAxNzUzNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gh1BwogCCKOda6xj9FRMgAAj_RYKMMPC3oNlcBtlmwk";
     }

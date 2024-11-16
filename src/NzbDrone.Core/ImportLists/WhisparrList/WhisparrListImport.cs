@@ -5,9 +5,9 @@ using NzbDrone.Core.Configuration;
 using NzbDrone.Core.Parser;
 using NzbDrone.Core.ThingiProvider;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList
+namespace NzbDrone.Core.ImportLists.LunarrList
 {
-    public class WhisparrListImport : HttpImportListBase<WhisparrListSettings>
+    public class LunarrListImport : HttpImportListBase<LunarrListSettings>
     {
         public override string Name => "Custom Lists";
 
@@ -15,7 +15,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList
         public override bool Enabled => true;
         public override bool EnableAuto => false;
 
-        public WhisparrListImport(IHttpClient httpClient,
+        public LunarrListImport(IHttpClient httpClient,
             IImportListStatusService importListStatusService,
             IConfigService configService,
             IParsingService parsingService,
@@ -37,7 +37,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList
 
         public override IImportListRequestGenerator GetRequestGenerator()
         {
-            return new WhisparrListRequestGenerator()
+            return new LunarrListRequestGenerator()
             {
                 Settings = Settings,
                 Logger = _logger,
@@ -47,7 +47,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList
 
         public override IParseImportListResponse GetParser()
         {
-            return new WhisparrListParser();
+            return new LunarrListParser();
         }
     }
 }

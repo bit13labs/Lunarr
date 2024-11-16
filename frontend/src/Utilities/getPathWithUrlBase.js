@@ -1,3 +1,3 @@
 export default function getPathWithUrlBase(path) {
-  return `${window.Whisparr.urlBase}${path}`;
+  return `${window.Lunarr.urlBase}${path}`;
 }

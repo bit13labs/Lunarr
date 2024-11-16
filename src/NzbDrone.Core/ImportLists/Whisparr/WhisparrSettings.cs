@@ -5,22 +5,22 @@ using NzbDrone.Core.Annotations;
 using NzbDrone.Core.ThingiProvider;
 using NzbDrone.Core.Validation;
 
-namespace NzbDrone.Core.ImportLists.Whisparr
+namespace NzbDrone.Core.ImportLists.Lunarr
 {
-    public class WhisparrSettingsValidator : AbstractValidator<WhisparrSettings>
+    public class LunarrSettingsValidator : AbstractValidator<LunarrSettings>
     {
-        public WhisparrSettingsValidator()
+        public LunarrSettingsValidator()
         {
             RuleFor(c => c.BaseUrl).ValidRootUrl();
             RuleFor(c => c.ApiKey).NotEmpty();
         }
     }
 
-    public class WhisparrSettings : IProviderConfig
+    public class LunarrSettings : IProviderConfig
     {
-        private static readonly WhisparrSettingsValidator Validator = new WhisparrSettingsValidator();
+        private static readonly LunarrSettingsValidator Validator = new LunarrSettingsValidator();
 
-        public WhisparrSettings()
+        public LunarrSettings()
         {
             BaseUrl = "";
             ApiKey = "";
@@ -28,10 +28,10 @@ namespace NzbDrone.Core.ImportLists.Whisparr
             TagIds = Array.Empty<int>();
         }
 
-        [FieldDefinition(0, Label = "Full URL", HelpText = "URL, including port, of the Whisparr V3 instance to import from")]
+        [FieldDefinition(0, Label = "Full URL", HelpText = "URL, including port, of the Lunarr V3 instance to import from")]
         public string BaseUrl { get; set; }
 
-        [FieldDefinition(1, Label = "API Key", Privacy = PrivacyLevel.ApiKey, HelpText = "Apikey of the Whisparr V3 instance to import from")]
+        [FieldDefinition(1, Label = "API Key", Privacy = PrivacyLevel.ApiKey, HelpText = "Apikey of the Lunarr V3 instance to import from")]
         public string ApiKey { get; set; }
 
         [FieldDefinition(2, Type = FieldType.Select, SelectOptionsProviderAction = "getProfiles", Label = "Profiles", HelpText = "Profiles from the source instance to import from")]

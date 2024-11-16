@@ -35,7 +35,7 @@ function createMapDispatchToProps(dispatch, props) {
     },
 
     onSeeChangesPress() {
-      window.location = `${window.Whisparr.urlBase}/system/updates`;
+      window.location = `${window.Lunarr.urlBase}/system/updates`;
     }
   };
 }

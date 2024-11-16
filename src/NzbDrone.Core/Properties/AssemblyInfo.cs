@@ -1,3 +1,3 @@
 ﻿using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Whisparr.Core.Test")]
+[assembly: InternalsVisibleTo("Lunarr.Core.Test")]

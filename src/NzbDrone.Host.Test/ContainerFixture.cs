@@ -22,7 +22,7 @@ using NzbDrone.Core.Messaging.Commands;
 using NzbDrone.Core.Messaging.Events;
 using NzbDrone.SignalR;
 using NzbDrone.Test.Common;
-using Whisparr.Host;
+using Lunarr.Host;
 using IServiceProvider = System.IServiceProvider;
 
 namespace NzbDrone.App.Test

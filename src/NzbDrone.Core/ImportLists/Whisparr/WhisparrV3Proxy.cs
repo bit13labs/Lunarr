@@ -7,43 +7,43 @@ using NLog;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Common.Http;
 
-namespace NzbDrone.Core.ImportLists.Whisparr
+namespace NzbDrone.Core.ImportLists.Lunarr
 {
-    public interface IWhisparrV3Proxy
+    public interface ILunarrV3Proxy
     {
-        List<WhisparrMovie> GetMovies(WhisparrSettings settings);
-        List<WhisparrProfile> GetProfiles(WhisparrSettings settings);
-        List<WhisparrTag> GetTags(WhisparrSettings settings);
-        ValidationFailure Test(WhisparrSettings settings);
+        List<LunarrMovie> GetMovies(LunarrSettings settings);
+        List<LunarrProfile> GetProfiles(LunarrSettings settings);
+        List<LunarrTag> GetTags(LunarrSettings settings);
+        ValidationFailure Test(LunarrSettings settings);
     }
 
-    public class WhisparrV3Proxy : IWhisparrV3Proxy
+    public class LunarrV3Proxy : ILunarrV3Proxy
     {
         private readonly IHttpClient _httpClient;
         private readonly Logger _logger;
 
-        public WhisparrV3Proxy(IHttpClient httpClient, Logger logger)
+        public LunarrV3Proxy(IHttpClient httpClient, Logger logger)
         {
             _httpClient = httpClient;
             _logger = logger;
         }
 
-        public List<WhisparrMovie> GetMovies(WhisparrSettings settings)
+        public List<LunarrMovie> GetMovies(LunarrSettings settings)
         {
-            return Execute<WhisparrMovie>("/api/v3/movie", settings);
+            return Execute<LunarrMovie>("/api/v3/movie", settings);
         }
 
-        public List<WhisparrProfile> GetProfiles(WhisparrSettings settings)
+        public List<LunarrProfile> GetProfiles(LunarrSettings settings)
         {
-            return Execute<WhisparrProfile>("/api/v3/qualityprofile", settings);
+            return Execute<LunarrProfile>("/api/v3/qualityprofile", settings);
         }
 
-        public List<WhisparrTag> GetTags(WhisparrSettings settings)
+        public List<LunarrTag> GetTags(LunarrSettings settings)
         {
-            return Execute<WhisparrTag>("/api/v3/tag", settings);
+            return Execute<LunarrTag>("/api/v3/tag", settings);
         }
 
-        public ValidationFailure Test(WhisparrSettings settings)
+        public ValidationFailure Test(LunarrSettings settings)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace NzbDrone.Core.ImportLists.Whisparr
             return null;
         }
 
-        private List<TResource> Execute<TResource>(string resource, WhisparrSettings settings)
+        private List<TResource> Execute<TResource>(string resource, LunarrSettings settings)
         {
             if (settings.BaseUrl.IsNullOrWhiteSpace() || settings.ApiKey.IsNullOrWhiteSpace())
             {

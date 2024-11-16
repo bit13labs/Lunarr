@@ -1,6 +1,6 @@
 using NzbDrone.Common.EnvironmentInfo;
 
-namespace Whisparr.Host.AccessControl
+namespace Lunarr.Host.AccessControl
 {
     public interface IRemoteAccessAdapter
     {
@@ -29,7 +29,7 @@ namespace Whisparr.Host.AccessControl
                 }
                 else if (!passive)
                 {
-                    throw new RemoteAccessException("Failed to register URLs for Whisparr. Whisparr will not be accessible remotely");
+                    throw new RemoteAccessException("Failed to register URLs for Lunarr. Lunarr will not be accessible remotely");
                 }
             }
         }

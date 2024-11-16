@@ -47,11 +47,11 @@ namespace NzbDrone.Test.Common
             string consoleExe;
             if (OsInfo.IsWindows)
             {
-                consoleExe = "Whisparr.Console.exe";
+                consoleExe = "Lunarr.Console.exe";
             }
             else
             {
-                consoleExe = "Whisparr";
+                consoleExe = "Lunarr";
             }
 
             if (BuildInfo.IsDebug)
@@ -80,11 +80,11 @@ namespace NzbDrone.Test.Common
 
                 if (statusCall.ResponseStatus == ResponseStatus.Completed)
                 {
-                    TestContext.Progress.WriteLine($"Whisparr {Port} is started. Running Tests");
+                    TestContext.Progress.WriteLine($"Lunarr {Port} is started. Running Tests");
                     return;
                 }
 
-                TestContext.Progress.WriteLine("Waiting for Whisparr to start. Response Status : {0}  [{1}] {2}", statusCall.ResponseStatus, statusCall.StatusDescription, statusCall.ErrorException.Message);
+                TestContext.Progress.WriteLine("Waiting for Lunarr to start. Response Status : {0}  [{1}] {2}", statusCall.ResponseStatus, statusCall.StatusDescription, statusCall.ErrorException.Message);
 
                 Thread.Sleep(500);
             }
@@ -99,7 +99,7 @@ namespace NzbDrone.Test.Common
                     _nzbDroneProcess.Refresh();
                     if (_nzbDroneProcess.HasExited)
                     {
-                        var log = File.ReadAllLines(Path.Combine(AppData, "logs", "Whisparr.trace.txt"));
+                        var log = File.ReadAllLines(Path.Combine(AppData, "logs", "Lunarr.trace.txt"));
                         var output = log.Join(Environment.NewLine);
                         TestContext.Progress.WriteLine("Process has exited prematurely: ExitCode={0} Output:\n{1}", _nzbDroneProcess.ExitCode, output);
                     }
@@ -135,25 +135,25 @@ namespace NzbDrone.Test.Common
             TestBase.DeleteTempFolder(AppData);
         }
 
-        private void Start(string outputWhisparrConsoleExe)
+        private void Start(string outputLunarrConsoleExe)
         {
             StringDictionary envVars = new ();
             if (PostgresOptions?.Host != null)
             {
-                envVars.Add("Whisparr__Postgres__Host", PostgresOptions.Host);
-                envVars.Add("Whisparr__Postgres__Port", PostgresOptions.Port.ToString());
-                envVars.Add("Whisparr__Postgres__User", PostgresOptions.User);
-                envVars.Add("Whisparr__Postgres__Password", PostgresOptions.Password);
-                envVars.Add("Whisparr__Postgres__MainDb", PostgresOptions.MainDb);
-                envVars.Add("Whisparr__Postgres__LogDb", PostgresOptions.LogDb);
+                envVars.Add("Lunarr__Postgres__Host", PostgresOptions.Host);
+                envVars.Add("Lunarr__Postgres__Port", PostgresOptions.Port.ToString());
+                envVars.Add("Lunarr__Postgres__User", PostgresOptions.User);
+                envVars.Add("Lunarr__Postgres__Password", PostgresOptions.Password);
+                envVars.Add("Lunarr__Postgres__MainDb", PostgresOptions.MainDb);
+                envVars.Add("Lunarr__Postgres__LogDb", PostgresOptions.LogDb);
 
                 TestContext.Progress.WriteLine("Using env vars:\n{0}", envVars.ToJson());
             }
 
-            TestContext.Progress.WriteLine("Starting instance from {0} on port {1}", outputWhisparrConsoleExe, Port);
+            TestContext.Progress.WriteLine("Starting instance from {0} on port {1}", outputLunarrConsoleExe, Port);
 
             var args = "-nobrowser -nosingleinstancecheck -data=\"" + AppData + "\"";
-            _nzbDroneProcess = _processProvider.Start(outputWhisparrConsoleExe, args, envVars, OnOutputDataReceived, OnOutputDataReceived);
+            _nzbDroneProcess = _processProvider.Start(outputLunarrConsoleExe, args, envVars, OnOutputDataReceived, OnOutputDataReceived);
         }
 
         private void OnOutputDataReceived(string data)

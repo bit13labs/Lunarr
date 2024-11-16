@@ -3,7 +3,7 @@ using NzbDrone.Core.Annotations;
 using NzbDrone.Core.ThingiProvider;
 using NzbDrone.Core.Validation;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList2.StevenLu
+namespace NzbDrone.Core.ImportLists.LunarrList2.StevenLu
 {
     public class StevenLu2SettingsValidator : AbstractValidator<StevenLu2Settings>
     {

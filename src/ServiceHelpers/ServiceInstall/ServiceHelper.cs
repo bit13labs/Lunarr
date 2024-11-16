@@ -8,7 +8,7 @@ namespace ServiceInstall
 {
     public static class ServiceHelper
     {
-        private static string WhisparrExe => Path.Combine(new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName, "Whisparr.Console.exe");
+        private static string LunarrExe => Path.Combine(new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName, "Lunarr.Console.exe");
 
         private static bool IsAnAdministrator()
         {
@@ -18,9 +18,9 @@ namespace ServiceInstall
 
         public static void Run(string arg)
         {
-            if (!File.Exists(WhisparrExe))
+            if (!File.Exists(LunarrExe))
             {
-                Console.WriteLine("Unable to find Whisparr.Console.exe in the current directory.");
+                Console.WriteLine("Unable to find Lunarr.Console.exe in the current directory.");
                 return;
             }
 
@@ -32,7 +32,7 @@ namespace ServiceInstall
 
             var startInfo = new ProcessStartInfo
             {
-                FileName = WhisparrExe,
+                FileName = LunarrExe,
                 Arguments = arg,
                 UseShellExecute = false,
                 RedirectStandardOutput = true,

@@ -6,11 +6,11 @@ using NzbDrone.Core.Configuration;
 using NzbDrone.Core.Parser;
 using NzbDrone.Core.ThingiProvider;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList2.IMDbList
+namespace NzbDrone.Core.ImportLists.LunarrList2.IMDbList
 {
     public class IMDbListImport : HttpImportListBase<IMDbListSettings>
     {
-        private readonly IHttpRequestBuilderFactory _whisparrMetadata;
+        private readonly IHttpRequestBuilderFactory _lunarrMetadata;
 
         public override string Name => "IMDb Lists";
 
@@ -18,7 +18,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList2.IMDbList
         public override bool Enabled => true;
         public override bool EnableAuto => false;
 
-        public IMDbListImport(IWhisparrCloudRequestBuilder requestBuilder,
+        public IMDbListImport(ILunarrCloudRequestBuilder requestBuilder,
                               IHttpClient httpClient,
                               IImportListStatusService importListStatusService,
                               IConfigService configService,
@@ -26,7 +26,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList2.IMDbList
                               Logger logger)
         : base(httpClient, importListStatusService, configService, parsingService, logger)
         {
-            _whisparrMetadata = requestBuilder.WhisparrMetadata;
+            _lunarrMetadata = requestBuilder.LunarrMetadata;
         }
 
         public override IEnumerable<ProviderDefinition> DefaultDefinitions
@@ -66,7 +66,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList2.IMDbList
                 Settings = Settings,
                 Logger = _logger,
                 HttpClient = _httpClient,
-                RequestBuilder = _whisparrMetadata
+                RequestBuilder = _lunarrMetadata
             };
         }
 

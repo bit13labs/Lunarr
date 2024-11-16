@@ -12,7 +12,7 @@ namespace NzbDrone.Core.ImportLists.TMDb.User
 {
     public class TMDbUserImport : TMDbImportListBase<TMDbUserSettings>
     {
-        public TMDbUserImport(IWhisparrCloudRequestBuilder requestBuilder,
+        public TMDbUserImport(ILunarrCloudRequestBuilder requestBuilder,
                                  IHttpClient httpClient,
                                  IImportListStatusService importListStatusService,
                                  IConfigService configService,

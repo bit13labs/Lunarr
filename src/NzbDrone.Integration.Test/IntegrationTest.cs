@@ -10,7 +10,7 @@ using NzbDrone.Core.Datastore.Migration.Framework;
 using NzbDrone.Core.Indexers.Newznab;
 using NzbDrone.Test.Common;
 using NzbDrone.Test.Common.Datastore;
-using Whisparr.Http.ClientSchema;
+using Lunarr.Http.ClientSchema;
 
 namespace NzbDrone.Integration.Test
 {
@@ -53,7 +53,7 @@ namespace NzbDrone.Integration.Test
             // Make sure tasks have been initialized so the config put below doesn't cause errors
             WaitForCompletion(() => Tasks.All().SelectList(x => x.TaskName).Contains("RssSync"));
 
-            Indexers.Post(new Whisparr.Api.V3.Indexers.IndexerResource
+            Indexers.Post(new Lunarr.Api.V3.Indexers.IndexerResource
             {
                 EnableRss = false,
                 EnableInteractiveSearch = false,

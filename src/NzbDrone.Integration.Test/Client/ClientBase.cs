@@ -5,8 +5,8 @@ using FluentAssertions;
 using NLog;
 using NzbDrone.Common.Serializer;
 using RestSharp;
-using Whisparr.Http;
-using Whisparr.Http.REST;
+using Lunarr.Http;
+using Lunarr.Http.REST;
 
 namespace NzbDrone.Integration.Test.Client
 {

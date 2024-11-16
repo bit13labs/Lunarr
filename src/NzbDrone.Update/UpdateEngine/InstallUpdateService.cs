@@ -86,11 +86,11 @@ namespace NzbDrone.Update.UpdateEngine
         public void Start(string installationFolder, int processId)
         {
             _logger.Info("Installation Folder: {0}", installationFolder);
-            _logger.Info("Updating Whisparr from version {0} to version {1}", _detectExistingVersion.GetExistingVersion(installationFolder), BuildInfo.Version);
+            _logger.Info("Updating Lunarr from version {0} to version {1}", _detectExistingVersion.GetExistingVersion(installationFolder), BuildInfo.Version);
 
             Verify(installationFolder, processId);
 
-            if (installationFolder.EndsWith(@"\bin\Whisparr") || installationFolder.EndsWith(@"/bin/Whisparr"))
+            if (installationFolder.EndsWith(@"\bin\Lunarr") || installationFolder.EndsWith(@"/bin/Lunarr"))
             {
                 installationFolder = installationFolder.GetParentPath();
                 _logger.Info("Fixed Installation Folder: {0}", installationFolder);
@@ -115,7 +115,7 @@ namespace NzbDrone.Update.UpdateEngine
                 {
                     if (_processProvider.Exists(ProcessProvider.WHISPARR_CONSOLE_PROCESS_NAME) || _processProvider.Exists(ProcessProvider.WHISPARR_PROCESS_NAME))
                     {
-                        _logger.Error("Whisparr was restarted prematurely by external process.");
+                        _logger.Error("Lunarr was restarted prematurely by external process.");
                         return;
                     }
                 }
@@ -131,7 +131,7 @@ namespace NzbDrone.Update.UpdateEngine
                     // Set executable flag on app and ffprobe
                     if (OsInfo.IsOsx || (OsInfo.IsLinux && PlatformInfo.IsNetCore))
                     {
-                        _diskProvider.SetFilePermissions(Path.Combine(installationFolder, "Whisparr"), "755", null);
+                        _diskProvider.SetFilePermissions(Path.Combine(installationFolder, "Lunarr"), "755", null);
                         _diskProvider.SetFilePermissions(Path.Combine(installationFolder, "ffprobe"), "755", null);
                     }
                 }
@@ -159,7 +159,7 @@ namespace NzbDrone.Update.UpdateEngine
 
                         if (_processProvider.Exists(ProcessProvider.WHISPARR_PROCESS_NAME))
                         {
-                            _logger.Info("Whisparr was restarted by external process.");
+                            _logger.Info("Lunarr was restarted by external process.");
                             break;
                         }
                     }

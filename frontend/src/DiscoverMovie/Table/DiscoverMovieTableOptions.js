@@ -52,7 +52,7 @@ class DiscoverMovieTableOptions extends Component {
 
     return (
       <FormGroup>
-        <FormLabel>{translate('IncludeWhisparrRecommendations')}</FormLabel>
+        <FormLabel>{translate('IncludeLunarrRecommendations')}</FormLabel>
 
         <FormInputGroup
           type={inputTypes.CHECK}

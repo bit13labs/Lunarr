@@ -3,7 +3,7 @@ using NzbDrone.Core.Annotations;
 using NzbDrone.Core.ThingiProvider;
 using NzbDrone.Core.Validation;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList2.IMDbList
+namespace NzbDrone.Core.ImportLists.LunarrList2.IMDbList
 {
     public class IMDbSettingsValidator : AbstractValidator<IMDbListSettings>
     {

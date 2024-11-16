@@ -19,7 +19,7 @@ namespace NzbDrone.Common.Test
         {
             var fakeEnvironment = new Mock<IAppFolderInfo>();
 
-            fakeEnvironment.SetupGet(c => c.AppDataFolder).Returns(@"C:\Whisparr\".AsOsAgnostic());
+            fakeEnvironment.SetupGet(c => c.AppDataFolder).Returns(@"C:\Lunarr\".AsOsAgnostic());
 
             fakeEnvironment.SetupGet(c => c.TempFolder).Returns(@"C:\Temp\".AsOsAgnostic());
 
@@ -248,43 +248,43 @@ namespace NzbDrone.Common.Test
         [Test]
         public void AppDataDirectory_path_test()
         {
-            GetIAppDirectoryInfo().GetAppDataPath().Should().BeEquivalentTo(@"C:\Whisparr\".AsOsAgnostic());
+            GetIAppDirectoryInfo().GetAppDataPath().Should().BeEquivalentTo(@"C:\Lunarr\".AsOsAgnostic());
         }
 
         [Test]
         public void Config_path_test()
         {
-            GetIAppDirectoryInfo().GetConfigPath().Should().BeEquivalentTo(@"C:\Whisparr\Config.xml".AsOsAgnostic());
+            GetIAppDirectoryInfo().GetConfigPath().Should().BeEquivalentTo(@"C:\Lunarr\Config.xml".AsOsAgnostic());
         }
 
         [Test]
         public void Sandbox()
         {
-            GetIAppDirectoryInfo().GetUpdateSandboxFolder().Should().BeEquivalentTo(@"C:\Temp\whisparr_update\".AsOsAgnostic());
+            GetIAppDirectoryInfo().GetUpdateSandboxFolder().Should().BeEquivalentTo(@"C:\Temp\lunarr_update\".AsOsAgnostic());
         }
 
         [Test]
         public void GetUpdatePackageFolder()
         {
-            GetIAppDirectoryInfo().GetUpdatePackageFolder().Should().BeEquivalentTo(@"C:\Temp\whisparr_update\Whisparr\".AsOsAgnostic());
+            GetIAppDirectoryInfo().GetUpdatePackageFolder().Should().BeEquivalentTo(@"C:\Temp\lunarr_update\Lunarr\".AsOsAgnostic());
         }
 
         [Test]
         public void GetUpdateClientFolder()
         {
-            GetIAppDirectoryInfo().GetUpdateClientFolder().Should().BeEquivalentTo(@"C:\Temp\whisparr_update\Whisparr\Whisparr.Update\".AsOsAgnostic());
+            GetIAppDirectoryInfo().GetUpdateClientFolder().Should().BeEquivalentTo(@"C:\Temp\lunarr_update\Lunarr\Lunarr.Update\".AsOsAgnostic());
         }
 
         [Test]
         public void GetUpdateClientExePath()
         {
-            GetIAppDirectoryInfo().GetUpdateClientExePath(PlatformType.DotNet).Should().BeEquivalentTo(@"C:\Temp\whisparr_update\Whisparr.Update.exe".AsOsAgnostic());
+            GetIAppDirectoryInfo().GetUpdateClientExePath(PlatformType.DotNet).Should().BeEquivalentTo(@"C:\Temp\lunarr_update\Lunarr.Update.exe".AsOsAgnostic());
         }
 
         [Test]
         public void GetUpdateLogFolder()
         {
-            GetIAppDirectoryInfo().GetUpdateLogFolder().Should().BeEquivalentTo(@"C:\Whisparr\UpdateLogs\".AsOsAgnostic());
+            GetIAppDirectoryInfo().GetUpdateLogFolder().Should().BeEquivalentTo(@"C:\Lunarr\UpdateLogs\".AsOsAgnostic());
         }
 
         [Test]

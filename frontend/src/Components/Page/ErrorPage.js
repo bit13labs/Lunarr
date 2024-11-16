@@ -16,7 +16,7 @@ function ErrorPage(props) {
     systemStatusError
   } = props;
 
-  let errorMessage = 'Failed to load Whisparr';
+  let errorMessage = 'Failed to load Lunarr';
 
   if (!isLocalStorageSupported) {
     errorMessage = 'Local Storage is not supported or disabled. A plugin or private browsing may have disabled it.';

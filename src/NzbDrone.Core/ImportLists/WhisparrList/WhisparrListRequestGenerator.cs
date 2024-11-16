@@ -2,11 +2,11 @@
 using NLog;
 using NzbDrone.Common.Http;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList
+namespace NzbDrone.Core.ImportLists.LunarrList
 {
-    public class WhisparrListRequestGenerator : IImportListRequestGenerator
+    public class LunarrListRequestGenerator : IImportListRequestGenerator
     {
-        public WhisparrListSettings Settings { get; set; }
+        public LunarrListSettings Settings { get; set; }
         public IHttpClient HttpClient { get; set; }
         public Logger Logger { get; set; }
 

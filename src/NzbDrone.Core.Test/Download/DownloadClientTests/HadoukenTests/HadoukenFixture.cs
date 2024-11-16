@@ -37,7 +37,7 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.HadoukenTests
                 DownloadedBytes = 0,
                 Progress = 0.0,
                 SavePath = "somepath",
-                Label = "whisparr"
+                Label = "lunarr"
             };
 
             _downloading = new HadoukenTorrent
@@ -50,7 +50,7 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.HadoukenTests
                 DownloadedBytes = 100,
                 Progress = 10.0,
                 SavePath = "somepath",
-                Label = "whisparr"
+                Label = "lunarr"
             };
 
             _failed = new HadoukenTorrent
@@ -64,7 +64,7 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.HadoukenTests
                 DownloadedBytes = 100,
                 Progress = 10.0,
                 SavePath = "somepath",
-                Label = "whisparr"
+                Label = "lunarr"
             };
 
             _completed = new HadoukenTorrent
@@ -77,7 +77,7 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.HadoukenTests
                 DownloadedBytes = 1000,
                 Progress = 100.0,
                 SavePath = "somepath",
-                Label = "whisparr"
+                Label = "lunarr"
             };
 
             Mocker.GetMock<ITorrentFileInfoReader>()
@@ -238,7 +238,7 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.HadoukenTests
                 DownloadedBytes = 1000,
                 Progress = 100.0,
                 SavePath = "somepath",
-                Label = "whisparr"
+                Label = "lunarr"
             };
 
             var torrents = new HadoukenTorrent[] { torrent };
@@ -265,7 +265,7 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.HadoukenTests
                 DownloadedBytes = 1000,
                 Progress = 100.0,
                 SavePath = "somepath",
-                Label = "whisparr-other"
+                Label = "lunarr-other"
             };
 
             var torrents = new HadoukenTorrent[] { torrent };

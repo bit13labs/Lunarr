@@ -54,7 +54,7 @@ class AddIndexerModalContent extends Component {
 
                 <Alert kind={kinds.INFO}>
                   <div>
-                    {translate('WhisparrSupportsAnyIndexer')}
+                    {translate('LunarrSupportsAnyIndexer')}
                   </div>
                   <div>
                     {translate('ForMoreInformationOnTheIndividualIndexers')}

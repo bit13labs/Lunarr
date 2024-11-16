@@ -33,7 +33,7 @@ namespace NzbDrone.Core.Validation
             return ruleBuilder.SetValidator(new RegularExpressionValidator("^https?://[-_a-z0-9.]+", RegexOptions.IgnoreCase)).WithMessage("must be valid URL that starts with http(s)://");
         }
 
-        public static IRuleBuilderOptions<T, string> ValidUrlBase<T>(this IRuleBuilder<T, string> ruleBuilder, string example = "/whisparr")
+        public static IRuleBuilderOptions<T, string> ValidUrlBase<T>(this IRuleBuilder<T, string> ruleBuilder, string example = "/lunarr")
         {
             return ruleBuilder.SetValidator(new RegularExpressionValidator(@"^(?!\/?https?://[-_a-z0-9.]+)", RegexOptions.IgnoreCase)).WithMessage($"Must be a valid URL path (ie: '{example}')");
         }
@@ -62,10 +62,10 @@ namespace NzbDrone.Core.Validation
             return ruleBuilder.WithState(v => NzbDroneValidationState.Warning);
         }
 
-        public static IRuleBuilderOptions<T, string> ContainsWhisparr<T>(this IRuleBuilder<T, string> ruleBuilder)
+        public static IRuleBuilderOptions<T, string> ContainsLunarr<T>(this IRuleBuilder<T, string> ruleBuilder)
         {
             ruleBuilder.SetValidator(new NotEmptyValidator(null));
-            return ruleBuilder.SetValidator(new RegularExpressionValidator("whisparr", RegexOptions.IgnoreCase)).WithMessage("Must contain Whisparr");
+            return ruleBuilder.SetValidator(new RegularExpressionValidator("lunarr", RegexOptions.IgnoreCase)).WithMessage("Must contain Lunarr");
         }
     }
 }

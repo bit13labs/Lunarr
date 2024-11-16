@@ -131,9 +131,9 @@ namespace NzbDrone.Common.Instrumentation
 
         private static void RegisterAppFile(IAppFolderInfo appFolderInfo)
         {
-            RegisterAppFile(appFolderInfo, "appFileInfo", "whisparr.txt", 50, LogLevel.Info);
-            RegisterAppFile(appFolderInfo, "appFileDebug", "whisparr.debug.txt", 500, LogLevel.Off);
-            RegisterAppFile(appFolderInfo, "appFileTrace", "whisparr.trace.txt", 500, LogLevel.Off);
+            RegisterAppFile(appFolderInfo, "appFileInfo", "lunarr.txt", 50, LogLevel.Info);
+            RegisterAppFile(appFolderInfo, "appFileDebug", "lunarr.debug.txt", 500, LogLevel.Off);
+            RegisterAppFile(appFolderInfo, "appFileTrace", "lunarr.trace.txt", 500, LogLevel.Off);
         }
 
         private static void RegisterAppFile(IAppFolderInfo appFolderInfo, string name, string fileName, int maxArchiveFiles, LogLevel minLogLevel)

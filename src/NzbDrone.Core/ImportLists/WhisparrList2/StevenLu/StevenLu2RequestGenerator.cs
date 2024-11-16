@@ -1,8 +1,8 @@
 ﻿using NzbDrone.Common.Http;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList2.StevenLu
+namespace NzbDrone.Core.ImportLists.LunarrList2.StevenLu
 {
-    public class StevenLu2RequestGenerator : WhisparrList2RequestGeneratorBase
+    public class StevenLu2RequestGenerator : LunarrList2RequestGeneratorBase
     {
         public StevenLu2Settings Settings { get; set; }
 

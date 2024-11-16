@@ -7,14 +7,14 @@ function getTranslations() {
     type: 'GET',
     global: false,
     dataType: 'json',
-    url: `${window.Whisparr.apiRoot}/localization`,
+    url: `${window.Lunarr.apiRoot}/localization`,
     success: function(data) {
       localization = data.Strings;
     }
   };
 
   ajaxOptions.headers = ajaxOptions.headers || {};
-  ajaxOptions.headers['X-Api-Key'] = window.Whisparr.apiKey;
+  ajaxOptions.headers['X-Api-Key'] = window.Lunarr.apiKey;
 
   $.ajax(ajaxOptions);
   return localization;

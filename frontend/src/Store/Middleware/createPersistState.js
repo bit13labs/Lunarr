@@ -93,7 +93,7 @@ const config = {
   slicer,
   serialize,
   merge,
-  key: 'whisparr'
+  key: 'lunarr'
 };
 
 export default function createPersistState() {

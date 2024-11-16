@@ -4,11 +4,11 @@ using NzbDrone.Common.Http;
 using NzbDrone.Core.Configuration;
 using NzbDrone.Core.Parser;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList2.StevenLu
+namespace NzbDrone.Core.ImportLists.LunarrList2.StevenLu
 {
     public class StevenLu2Import : HttpImportListBase<StevenLu2Settings>
     {
-        private readonly IHttpRequestBuilderFactory _whisparrMetadata;
+        private readonly IHttpRequestBuilderFactory _lunarrMetadata;
 
         public override string Name => "StevenLu List";
 
@@ -16,7 +16,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList2.StevenLu
         public override bool Enabled => true;
         public override bool EnableAuto => false;
 
-        public StevenLu2Import(IWhisparrCloudRequestBuilder requestBuilder,
+        public StevenLu2Import(ILunarrCloudRequestBuilder requestBuilder,
                               IHttpClient httpClient,
                               IImportListStatusService importListStatusService,
                               IConfigService configService,
@@ -24,7 +24,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList2.StevenLu
                               Logger logger)
         : base(httpClient, importListStatusService, configService, parsingService, logger)
         {
-            _whisparrMetadata = requestBuilder.WhisparrMetadata;
+            _lunarrMetadata = requestBuilder.LunarrMetadata;
         }
 
         public override IImportListRequestGenerator GetRequestGenerator()
@@ -34,13 +34,13 @@ namespace NzbDrone.Core.ImportLists.WhisparrList2.StevenLu
                 Settings = Settings,
                 Logger = _logger,
                 HttpClient = _httpClient,
-                RequestBuilder = _whisparrMetadata
+                RequestBuilder = _lunarrMetadata
             };
         }
 
         public override IParseImportListResponse GetParser()
         {
-            return new WhisparrList2Parser();
+            return new LunarrList2Parser();
         }
     }
 }

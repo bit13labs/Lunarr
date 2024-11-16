@@ -5,11 +5,11 @@ using NzbDrone.Common.Http;
 using NzbDrone.Core.ImportLists.ImportListMovies;
 using NzbDrone.Core.ImportLists.TMDb;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList
+namespace NzbDrone.Core.ImportLists.LunarrList
 {
-    public class WhisparrListParser : IParseImportListResponse
+    public class LunarrListParser : IParseImportListResponse
     {
-        public WhisparrListParser()
+        public LunarrListParser()
         {
         }
 
@@ -39,11 +39,11 @@ namespace NzbDrone.Core.ImportLists.WhisparrList
         {
             try
             {
-                var error = JsonConvert.DeserializeObject<WhisparrErrors>(importListResponse.HttpResponse.Content);
+                var error = JsonConvert.DeserializeObject<LunarrErrors>(importListResponse.HttpResponse.Content);
 
                 if (error != null && error.Errors != null && error.Errors.Count != 0)
                 {
-                    throw new WhisparrListException(error);
+                    throw new LunarrListException(error);
                 }
             }
             catch (JsonSerializationException)

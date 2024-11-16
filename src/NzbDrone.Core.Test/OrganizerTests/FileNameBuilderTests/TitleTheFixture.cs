@@ -27,7 +27,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
                     .With(e => e.Title = "Batman")
                     .Build();
 
-            _movieFile = new MovieFile { Quality = new QualityModel(Quality.HDTV720p), ReleaseGroup = "WhisparrTest" };
+            _movieFile = new MovieFile { Quality = new QualityModel(Quality.HDTV720p), ReleaseGroup = "LunarrTest" };
 
             _namingConfig = NamingConfig.Default;
             _namingConfig.RenameMovies = true;

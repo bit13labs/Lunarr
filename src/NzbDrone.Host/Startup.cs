@@ -21,14 +21,14 @@ using NzbDrone.Core.Datastore;
 using NzbDrone.Core.Instrumentation;
 using NzbDrone.Http.Authentication;
 using NzbDrone.SignalR;
-using Whisparr.Api.V3.System;
-using Whisparr.Host;
-using Whisparr.Host.AccessControl;
-using Whisparr.Http;
-using Whisparr.Http.Authentication;
-using Whisparr.Http.ErrorManagement;
-using Whisparr.Http.Frontend;
-using Whisparr.Http.Middleware;
+using Lunarr.Api.V3.System;
+using Lunarr.Host;
+using Lunarr.Host.AccessControl;
+using Lunarr.Http;
+using Lunarr.Http.Authentication;
+using Lunarr.Http.ErrorManagement;
+using Lunarr.Http.Frontend;
+using Lunarr.Http.Middleware;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace NzbDrone.Host
@@ -49,7 +49,7 @@ namespace NzbDrone.Host
                 b.ClearProviders();
                 b.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
                 b.AddFilter("Microsoft.AspNetCore", Microsoft.Extensions.Logging.LogLevel.Warning);
-                b.AddFilter("Whisparr.Http.Authentication", LogLevel.Information);
+                b.AddFilter("Lunarr.Http.Authentication", LogLevel.Information);
                 b.AddFilter("Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager", LogLevel.Error);
                 b.AddNLog();
             });
@@ -98,12 +98,12 @@ namespace NzbDrone.Host
                 c.SwaggerDoc("v3", new OpenApiInfo
                 {
                     Version = "3.0.0",
-                    Title = "Whisparr",
-                    Description = "Whisparr API docs",
+                    Title = "Lunarr",
+                    Description = "Lunarr API docs",
                     License = new OpenApiLicense
                     {
                         Name = "GPL-3.0",
-                        Url = new Uri("https://github.com/Whisparr/Whisparr/blob/develop/LICENSE")
+                        Url = new Uri("https://github.com/Lunarr/Lunarr/blob/develop/LICENSE")
                     }
                 });
 
@@ -216,7 +216,7 @@ namespace NzbDrone.Host
                               IConfigFileProvider configFileProvider,
                               IRuntimeInfo runtimeInfo,
                               IFirewallAdapter firewallAdapter,
-                              WhisparrErrorPipeline errorHandler)
+                              LunarrErrorPipeline errorHandler)
         {
             initializeLogger.Initialize();
             appFolderFactory.Register();

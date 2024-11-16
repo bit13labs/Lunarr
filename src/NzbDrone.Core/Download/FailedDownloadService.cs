@@ -75,7 +75,7 @@ namespace NzbDrone.Core.Download
 
                 if (grabbedItems.Empty())
                 {
-                    trackedDownload.Warn("Download wasn't grabbed by Whisparr, skipping");
+                    trackedDownload.Warn("Download wasn't grabbed by Lunarr, skipping");
                     return;
                 }
 

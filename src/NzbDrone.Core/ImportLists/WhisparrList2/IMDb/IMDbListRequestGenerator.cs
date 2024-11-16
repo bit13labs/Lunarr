@@ -1,15 +1,15 @@
 using System;
 using NzbDrone.Common.Http;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList2.IMDbList
+namespace NzbDrone.Core.ImportLists.LunarrList2.IMDbList
 {
-    public class IMDbListRequestGenerator : WhisparrList2RequestGeneratorBase
+    public class IMDbListRequestGenerator : LunarrList2RequestGeneratorBase
     {
         public IMDbListSettings Settings { get; set; }
 
         protected override HttpRequest GetHttpRequest()
         {
-            //Use IMDb list Export for user lists to bypass WhisparrAPI caching
+            //Use IMDb list Export for user lists to bypass LunarrAPI caching
             if (Settings.ListId.StartsWith("ls", StringComparison.OrdinalIgnoreCase))
             {
                 return new HttpRequest($"https://www.imdb.com/list/{Settings.ListId}/export", new HttpAccept("*/*"));

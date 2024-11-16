@@ -6,9 +6,9 @@ using NzbDrone.Core.ImportLists.Exceptions;
 using NzbDrone.Core.ImportLists.ImportListMovies;
 using NzbDrone.Core.MetadataSource.SkyHook.Resource;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList2
+namespace NzbDrone.Core.ImportLists.LunarrList2
 {
-    public class WhisparrList2Parser : IParseImportListResponse
+    public class LunarrList2Parser : IParseImportListResponse
     {
         public virtual IList<ImportListMovie> ParseResponse(ImportListResponse importListResponse)
         {
@@ -37,7 +37,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList2
             if (listResponse.HttpResponse.StatusCode != HttpStatusCode.OK)
             {
                 throw new ImportListException(listResponse,
-                    "Whisparr API call resulted in an unexpected StatusCode [{0}]",
+                    "Lunarr API call resulted in an unexpected StatusCode [{0}]",
                     listResponse.HttpResponse.StatusCode);
             }
 
@@ -47,7 +47,7 @@ namespace NzbDrone.Core.ImportLists.WhisparrList2
                 !listResponse.HttpRequest.Headers.Accept.Contains("text/json"))
             {
                 throw new ImportListException(listResponse,
-                    "Whisparr API responded with html content. Site is likely blocked or unavailable.");
+                    "Lunarr API responded with html content. Site is likely blocked or unavailable.");
             }
 
             return true;

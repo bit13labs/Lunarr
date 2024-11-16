@@ -1,2 +1,2 @@
 /* eslint no-undef: 0 */
-__webpack_public_path__ = `${window.Whisparr.urlBase}/`;
+__webpack_public_path__ = `${window.Lunarr.urlBase}/`;

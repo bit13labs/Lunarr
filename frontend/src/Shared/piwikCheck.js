@@ -1,4 +1,4 @@
-if (window.Whisparr.analytics) {
+if (window.Lunarr.analytics) {
   const d = document;
   const g = d.createElement('script');
   const s = d.getElementsByTagName('script')[0];

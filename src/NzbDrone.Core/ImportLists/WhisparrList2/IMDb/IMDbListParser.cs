@@ -6,9 +6,9 @@ using NzbDrone.Common.Extensions;
 using NzbDrone.Core.ImportLists.ImportListMovies;
 using NzbDrone.Core.MetadataSource.SkyHook.Resource;
 
-namespace NzbDrone.Core.ImportLists.WhisparrList2.IMDbList
+namespace NzbDrone.Core.ImportLists.LunarrList2.IMDbList
 {
-    public class IMDbListParser : WhisparrList2Parser
+    public class IMDbListParser : LunarrList2Parser
     {
         private readonly IMDbListSettings _settings;
 

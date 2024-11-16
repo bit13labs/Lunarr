@@ -2,7 +2,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using NzbDrone.Core.Annotations;
 using NzbDrone.Test.Common;
-using Whisparr.Http.ClientSchema;
+using Lunarr.Http.ClientSchema;
 
 namespace NzbDrone.Api.Test.ClientSchemaTests
 {

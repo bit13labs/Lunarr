@@ -22,7 +22,7 @@ function getUrls(state) {
     tags
   } = state;
 
-  let icalUrl = `${window.location.host}${window.Whisparr.urlBase}/feed/v3/calendar/Whisparr.ics?`;
+  let icalUrl = `${window.location.host}${window.Lunarr.urlBase}/feed/v3/calendar/Lunarr.ics?`;
 
   if (unmonitored) {
     icalUrl += 'unmonitored=true&';
@@ -36,7 +36,7 @@ function getUrls(state) {
     icalUrl += `tags=${tags.toString()}&`;
   }
 
-  icalUrl += `apikey=${window.Whisparr.apiKey}`;
+  icalUrl += `apikey=${window.Lunarr.apiKey}`;
 
   const iCalHttpUrl = `${window.location.protocol}//${icalUrl}`;
   const iCalWebCalUrl = `webcal://${icalUrl}`;
@@ -109,7 +109,7 @@ class CalendarLinkModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          {translate('WhisparrCalendarFeed')}
+          {translate('LunarrCalendarFeed')}
         </ModalHeader>
 
         <ModalBody>

@@ -6,7 +6,7 @@ using NLog;
 using NzbDrone.Common.EnvironmentInfo;
 using NzbDrone.Common.Instrumentation;
 using NzbDrone.SysTray;
-using Whisparr.Host;
+using Lunarr.Host;
 
 namespace NzbDrone
 {

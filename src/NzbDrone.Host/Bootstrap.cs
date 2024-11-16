@@ -25,7 +25,7 @@ using NzbDrone.Core.Datastore.Extensions;
 using NzbDrone.Host;
 using PostgresOptions = NzbDrone.Core.Datastore.PostgresOptions;
 
-namespace Whisparr.Host
+namespace Lunarr.Host
 {
     public static class Bootstrap
     {
@@ -33,18 +33,18 @@ namespace Whisparr.Host
 
         public static readonly List<string> ASSEMBLIES = new List<string>
         {
-            "Whisparr.Host",
-            "Whisparr.Core",
-            "Whisparr.SignalR",
-            "Whisparr.Api.V3",
-            "Whisparr.Http"
+            "Lunarr.Host",
+            "Lunarr.Core",
+            "Lunarr.SignalR",
+            "Lunarr.Api.V3",
+            "Lunarr.Http"
         };
 
         public static void Start(string[] args, Action<IHostBuilder> trayCallback = null)
         {
             try
             {
-                Logger.Info("Starting Whisparr - {0} - Version {1}",
+                Logger.Info("Starting Lunarr - {0} - Version {1}",
                             Process.GetCurrentProcess().MainModule.FileName,
                             Assembly.GetExecutingAssembly().GetName().Version);
 
@@ -93,7 +93,7 @@ namespace Whisparr.Host
             }
             catch (InvalidConfigFileException ex)
             {
-                throw new WhisparrStartupException(ex);
+                throw new LunarrStartupException(ex);
             }
             catch (TerminateApplicationException e)
             {
@@ -132,7 +132,7 @@ namespace Whisparr.Host
                 })
                 .ConfigureServices(services =>
                 {
-                    services.Configure<PostgresOptions>(config.GetSection("Whisparr:Postgres"));
+                    services.Configure<PostgresOptions>(config.GetSection("Lunarr:Postgres"));
                 })
                 .ConfigureWebHost(builder =>
                 {
@@ -225,11 +225,11 @@ namespace Whisparr.Host
             {
                 if (ex.HResult == 0x2 || ex.HResult == 0x2006D080)
                 {
-                    throw new WhisparrStartupException(ex,
+                    throw new LunarrStartupException(ex,
                         $"The SSL certificate file {cert} does not exist");
                 }
 
-                throw new WhisparrStartupException(ex);
+                throw new LunarrStartupException(ex);
             }
 
             return certificate;

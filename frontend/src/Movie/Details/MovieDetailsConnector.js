@@ -220,7 +220,7 @@ function createMapDispatchToProps(dispatch, props) {
       dispatch(executeCommand(payload));
     },
     onGoToMovie(titleSlug) {
-      dispatch(push(`${window.Whisparr.urlBase}/movie/${titleSlug}`));
+      dispatch(push(`${window.Lunarr.urlBase}/movie/${titleSlug}`));
     },
     dispatchFetchMovieBlocklist({ movieId }) {
       dispatch(fetchMovieBlocklist({ movieId }));

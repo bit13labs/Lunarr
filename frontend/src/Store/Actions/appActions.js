@@ -35,7 +35,7 @@ export const defaultState = {
   messages: {
     items: []
   },
-  version: window.Whisparr.version,
+  version: window.Lunarr.version,
   isUpdated: false,
   isConnected: true,
   isReconnecting: false,

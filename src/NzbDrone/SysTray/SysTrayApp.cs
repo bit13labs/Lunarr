@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using Microsoft.Extensions.Hosting;
 using NzbDrone.Common.EnvironmentInfo;
 using NzbDrone.Core.Lifecycle;
-using Whisparr.Host;
+using Lunarr.Host;
 
 namespace NzbDrone.SysTray
 {
@@ -30,8 +30,8 @@ namespace NzbDrone.SysTray
             _trayMenu.Items.Add(new ToolStripSeparator());
             _trayMenu.Items.Add(new ToolStripMenuItem("Exit", null, OnExit));
 
-            _trayIcon.Text = string.Format("Whisparr - {0}", BuildInfo.Version);
-            _trayIcon.Icon = Properties.Resources.Whisparr;
+            _trayIcon.Text = string.Format("Lunarr - {0}", BuildInfo.Version);
+            _trayIcon.Icon = Properties.Resources.Lunarr;
 
             _trayIcon.ContextMenuStrip = _trayMenu;
             _trayIcon.Visible = true;

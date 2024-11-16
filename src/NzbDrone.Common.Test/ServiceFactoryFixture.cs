@@ -15,7 +15,7 @@ using NzbDrone.Core.Datastore.Extensions;
 using NzbDrone.Core.Lifecycle;
 using NzbDrone.Core.Messaging.Events;
 using NzbDrone.Test.Common;
-using Whisparr.Host;
+using Lunarr.Host;
 
 namespace NzbDrone.Common.Test
 {

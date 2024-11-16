@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 const absUrlRegex = /^(https?:)?\/\//i;
-const apiRoot = window.Whisparr.apiRoot;
+const apiRoot = window.Lunarr.apiRoot;
 
 function isRelative(ajaxOptions) {
   return !absUrlRegex.test(ajaxOptions.url);
@@ -13,7 +13,7 @@ function addRootUrl(ajaxOptions) {
 
 function addApiKey(ajaxOptions) {
   ajaxOptions.headers = ajaxOptions.headers || {};
-  ajaxOptions.headers['X-Api-Key'] = window.Whisparr.apiKey;
+  ajaxOptions.headers['X-Api-Key'] = window.Lunarr.apiKey;
 }
 
 function addContentType(ajaxOptions) {

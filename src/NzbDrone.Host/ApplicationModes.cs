@@ -1,4 +1,4 @@
-﻿namespace Whisparr.Host
+﻿namespace Lunarr.Host
 {
     public enum ApplicationModes
     {

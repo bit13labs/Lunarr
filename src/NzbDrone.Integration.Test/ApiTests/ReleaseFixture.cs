@@ -2,7 +2,7 @@ using System.Linq;
 using System.Net;
 using FluentAssertions;
 using NUnit.Framework;
-using Whisparr.Api.V3.Indexers;
+using Lunarr.Api.V3.Indexers;
 
 namespace NzbDrone.Integration.Test.ApiTests
 {

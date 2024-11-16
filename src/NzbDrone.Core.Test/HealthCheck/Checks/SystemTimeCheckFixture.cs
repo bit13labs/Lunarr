@@ -18,7 +18,7 @@ namespace NzbDrone.Core.Test.HealthCheck.Checks
         [SetUp]
         public void Setup()
         {
-            Mocker.SetConstant<IWhisparrCloudRequestBuilder>(new WhisparrCloudRequestBuilder());
+            Mocker.SetConstant<ILunarrCloudRequestBuilder>(new LunarrCloudRequestBuilder());
         }
 
         private void GivenServerTime(DateTime dateTime)

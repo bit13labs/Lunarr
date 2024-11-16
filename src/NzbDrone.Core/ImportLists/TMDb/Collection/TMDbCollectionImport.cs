@@ -9,7 +9,7 @@ namespace NzbDrone.Core.ImportLists.TMDb.Collection
 {
     public class TMDbCollectionImport : TMDbImportListBase<TMDbCollectionSettings>
     {
-        public TMDbCollectionImport(IWhisparrCloudRequestBuilder requestBuilder,
+        public TMDbCollectionImport(ILunarrCloudRequestBuilder requestBuilder,
                                  IHttpClient httpClient,
                                  IImportListStatusService importListStatusService,
                                  IConfigService configService,

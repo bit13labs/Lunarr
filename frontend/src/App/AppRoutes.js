@@ -51,7 +51,7 @@ function AppRoutes(props) {
       />
 
       {
-        window.Whisparr.urlBase &&
+        window.Lunarr.urlBase &&
           <Route
             exact={true}
             path="/"

@@ -184,9 +184,9 @@ class GeneralSettings extends Component {
         <ConfirmModal
           isOpen={this.state.isRestartRequiredModalOpen}
           kind={kinds.DANGER}
-          title={translate('RestartWhisparr')}
+          title={translate('RestartLunarr')}
           message={
-            `Whisparr requires a restart to apply changes, do you want to restart now? ${isWindowsService ? 'Depending which user is running the Whisparr service you may need to restart Whisparr as admin once before the service will start automatically.' : ''}`
+            `Lunarr requires a restart to apply changes, do you want to restart now? ${isWindowsService ? 'Depending which user is running the Lunarr service you may need to restart Lunarr as admin once before the service will start automatically.' : ''}`
           }
           cancelLabel={translate('IllRestartLater')}
           confirmLabel={translate('RestartNow')}

@@ -4,7 +4,7 @@ using System.Linq;
 using NLog;
 using NzbDrone.Common.Processes;
 
-namespace Whisparr.Host
+namespace Lunarr.Host
 {
     public interface ISingleInstancePolicy
     {
@@ -32,7 +32,7 @@ namespace Whisparr.Host
         {
             if (IsAlreadyRunning())
             {
-                _logger.Warn("Another instance of Whisparr is already running.");
+                _logger.Warn("Another instance of Lunarr is already running.");
                 _browserService.LaunchWebUI();
                 throw new TerminateApplicationException("Another instance is already running");
             }
@@ -50,7 +50,7 @@ namespace Whisparr.Host
         {
             if (IsAlreadyRunning())
             {
-                _logger.Debug("Another instance of Whisparr is already running.");
+                _logger.Debug("Another instance of Lunarr is already running.");
             }
         }
 
@@ -73,14 +73,14 @@ namespace Whisparr.Host
 
                 if (otherProcesses.Any())
                 {
-                    _logger.Info("{0} instance(s) of Whisparr are running", otherProcesses.Count);
+                    _logger.Info("{0} instance(s) of Lunarr are running", otherProcesses.Count);
                 }
 
                 return otherProcesses;
             }
             catch (Exception ex)
             {
-                _logger.Warn(ex, "Failed to check for multiple instances of Whisparr.");
+                _logger.Warn(ex, "Failed to check for multiple instances of Lunarr.");
                 return new List<int>();
             }
         }
