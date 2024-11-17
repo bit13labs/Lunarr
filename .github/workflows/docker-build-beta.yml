@@ -56,8 +56,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v5
         with:
-          context: ./TorrentSoupExporter
-          file: ./TorrentSoupExporter/Dockerfile
+          context: .
           push: true
           build-args: |
             PROJECT_NAME=${{ env.IMAGE_NAME }}
