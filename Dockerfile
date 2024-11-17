@@ -22,7 +22,7 @@ RUN \
   sqlite-libs \
   xmlstarlet && \
   echo "**** install lunarr ****" && \
-  mkdir -p /app/radarr/bin && \
+  mkdir -p /app/lunarr/bin && \
   if [ -z ${LUNARR_RELEASE+x} ]; then \
   LUNARR_RELEASE="1.0.0"; \
   fi && \
@@ -30,8 +30,8 @@ RUN \
   /tmp/lunarr.tar.gz -L \
   "https://github.com/bit13labs/Lunarr/raw/refs/heads/lunarr/lunarr-v1.0.0-linux-x64.tar.gz" && \
   tar xzf \
-  /tmp/radarr.tar.gz -C \
-  /app/radarr/bin --strip-components=1 && \
+  /tmp/lunarr.tar.gz -C \
+  /app/lunarr/bin --strip-components=1 && \
   echo -e "UpdateMethod=docker\nBranch=${LUNARR_BRANCH}\nPackageVersion=${VERSION}\nPackageAuthor=Anonymous" > /app/lunarr/package_info && \
   printf "version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
