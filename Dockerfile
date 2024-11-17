@@ -40,7 +40,7 @@ RUN \
   /tmp/*
 
 # copy local files
-COPY root/ /
+COPY files/root/ /
 
 # ports and volumes
 EXPOSE 6969
