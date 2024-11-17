@@ -13,14 +13,14 @@ namespace NzbDrone.Common.Cloud
     {
         public LunarrCloudRequestBuilder()
         {
-            Services = new HttpRequestBuilder("https://lunarr.servarr.com/v1/")
+            Services = new HttpRequestBuilder("https://nodered.bit13.local/lunarr/servarr/v1")
                 .CreateFactory();
 
             TMDB = new HttpRequestBuilder("https://api.themoviedb.org/{api}/{route}/{id}{secondaryRoute}")
                 .SetHeader("Authorization", $"Bearer {AuthToken}")
                 .CreateFactory();
 
-            LunarrMetadata = new HttpRequestBuilder("https://api.lunarr.com/v1/{route}")
+            LunarrMetadata = new HttpRequestBuilder("https://nodered.bit13.local/lunarr/api/v1/{route}")
                 .CreateFactory();
         }
 

@@ -1,7 +1,7 @@
 <Project>
   <!-- Common to all Lunarr Projects -->
   <PropertyGroup>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -97,7 +97,7 @@
     <PackageReference Include="NunitXml.TestLogger" Version="3.0.131" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TestProject)'=='true' and '$(TargetFramework)'=='net6.0'">
+  <ItemGroup Condition="'$(TestProject)'=='true' and '$(TargetFramework)'=='net8.0'">
     <PackageReference Include="coverlet.collector" Version="3.0.4-preview.27.ge7cb7c3b40" />
   </ItemGroup>
 
