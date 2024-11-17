@@ -6,8 +6,8 @@ FROM ghcr.io/linuxserver/baseimage-alpine:3.20
 ARG BUILD_DATE
 ARG VERSION
 ARG LUNARR_RELEASE
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="Roxedus,thespad"
+LABEL build_version="${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer=""
 
 # environment settings
 ARG LUNARR_BRANCH="lunarr"
@@ -23,27 +23,26 @@ RUN \
   xmlstarlet && \
   echo "**** install lunarr ****" && \
   mkdir -p /app/radarr/bin && \
-  if [ -z ${RADARR_RELEASE+x} ]; then \
-  RADARR_RELEASE=$(curl -sL "https://whisparr.servarr.com/v1/update/${LUNARR_BRANCH}/changes?runtime=netcore&os=linuxmusl" \
-  | jq -r '.[0].version'); \
+  if [ -z ${LUNARR_RELEASE+x} ]; then \
+  LUNARR_RELEASE="1.0.0"; \
   fi && \
   curl -o \
-  /tmp/radarr.tar.gz -L \
-  "https://radarr.servarr.com/v1/update/${LUNARR_BRANCH}/updatefile?version=${LUNARR_RELEASE}&os=linuxmusl&runtime=netcore&arch=x64" && \
+  /tmp/lunarr.tar.gz -L \
+  "https://github.com/bit13labs/Lunarr/raw/refs/heads/lunarr/lunarr-v1.0.0-linux-x64.tar.gz" && \
   tar xzf \
   /tmp/radarr.tar.gz -C \
   /app/radarr/bin --strip-components=1 && \
-  echo -e "UpdateMethod=docker\nBranch=${LUNARR_BRANCH}\nPackageVersion=${VERSION}\nPackageAuthor=[linuxserver.io](https://linuxserver.io)" > /app/lunarr/package_info && \
-  printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
+  echo -e "UpdateMethod=docker\nBranch=${LUNARR_BRANCH}\nPackageVersion=${VERSION}\nPackageAuthor=Anonymous" > /app/lunarr/package_info && \
+  printf "version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
   rm -rf \
-  /app/radarr/bin/Radarr.Update \
+  /app/lunarr/bin/Lunarr.Update \
   /tmp/*
 
 # copy local files
 COPY root/ /
 
 # ports and volumes
-EXPOSE 7878
+EXPOSE 6969
 
 VOLUME /config
