@@ -11,7 +11,7 @@ using Microsoft.Extensions.Options;
 using NzbDrone.Common.EnvironmentInfo;
 using NzbDrone.Core.Authentication;
 
-namespace Lunarrttp.Authentication
+namespace Lunarr.Http.Authentication
 {
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {

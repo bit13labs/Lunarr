@@ -42,7 +42,7 @@ stages:
   - stage: Setup
     displayName: Setup
     jobs:
-    - job:
+    - job: Setup
       displayName: Build Variables
       pool:
         vmImage: ${{ variables.linuxImage }}
